@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function mostra(frase) {
+        document.write(frase + '<br>')
+    }
+
+    var anoDeOlimpiada = parseInt(prompt('Informe o ano inicial!'))
+    var anoLimite = parseInt(prompt('Qaul o ano limite?'))
+
+    while (anoDeOlimpiada <= anoLimite) {
+        mostra(anoDeOlimpiada + ' ocorre a olimpiada!')
+        anoDeOlimpiada = anoDeOlimpiada + 4
+    }
+
+    mostra('<br>Esses são todos os anos dentro do periodo estipulado onde ocorre as olimpiadas')
+</script>

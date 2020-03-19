@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<h3>Álcool ou Gasolina?</h3>
+<script>
+    var tanque = 40
+    var caminhoComGasolina = 480
+    var consumoDeGasolina = caminhoComGasolina / tanque
+    var precoDaGasolina = 2.90
+    var precoPorKilometroDaGasolina = precoDaGasolina / consumoDeGasolina
+    
+    var caminhoComAlcool = 300
+    var consumoDeAlcool = caminhoComAlcool / tanque
+    var precoDoalcool = 2.40
+    var precoPorKilometroDoAlcool =  precoDoalcool / consumoDeAlcool
+
+    function pulaLinha () {
+        document.write('<br>')
+    }
+
+    document.write('A desgraça andou 480km com ' + tanque + ' litros de gasolina, O consumo medio de gasolina por km desgraçado foi de : ' + consumoDeGasolina + ' km/l')
+    pulaLinha();pulaLinha()
+    document.write('A desgraça andou 300km com ' + tanque + ' litros de alcool, O consumo medio de alcool por km desgraçado foi de : ' + consumoDeAlcool + ' km/l')
+
+    var numero = 0.314178473
+    pulaLinha();pulaLinha()
+    document.write(numero.toFixed(2))
+    /* pulaLinha();pulaLinha()
+    document.write(numero) */
+    pulaLinha();pulaLinha()
+    document.write(precoPorKilometroDaGasolina)
+    pulaLinha();pulaLinha()
+    document.write(precoPorKilometroDoAlcool)
+
+</script>

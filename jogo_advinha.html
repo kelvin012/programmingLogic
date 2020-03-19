@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>")
+    }
+
+    function mostra(frase) {
+        document.write(frase)
+        pulaLinha()
+    }
+
+    function sorteia(n) {
+        return Math.round(Math.random() * n)
+    }
+    var qtdNAleatoria = 100
+    var numeroPensado = sorteia(qtdNAleatoria)
+
+    alert(numeroPensado)
+
+    var chute = prompt('Já pensei. Qual você acha que é ?')
+
+    if (isNaN(chute) == false && chute >= 0 && chute <= qtdNAleatoria) {
+        if (chute == numeroPensado) {
+            mostra('Uau! Você acertou, pois eu pensei no  numero : ' + numeroPensado)
+        } else {
+            mostra('Você errou! Eu tinha pensado no numero : ' + numeroPensado)
+
+            if (chute > numeroPensado) {
+                mostra("Seu chute foi maior que o calculado pela Pseudoaleatoriedade")
+            } else {
+                mostra("Seu chute foi menor que o calculado pela Pseudoaleatoriedade")
+            }
+        }
+    }else{
+        mostra('O macaco filho de uma puta digite um numero real entre 0 e ' + qtdNAleatoria)
+    }
+
+
+
+</script>

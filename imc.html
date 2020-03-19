@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write('<br>')
+    }
+    function mostra(frase) {
+        document.write(frase)
+        pulaLinha()
+    }
+
+    function calcularIMC(altura, peso) {
+        var imc = peso / ( altura * altura)
+        return imc
+    }
+    var nome = prompt('Qual é seu nome ?')
+    var pesoDoUsuario = prompt(nome + ' Qual seu peso ?')
+    var alturaDoUsuario = prompt(nome + ' Qual a sua altura ?')
+    imcDoUsuario = calcularIMC(alturaDoUsuario, pesoDoUsuario)
+    mostra('O IMC do ' + nome + ' foi de => ' + imcDoUsuario.toFixed(2))
+    if (imcDoUsuario < 18.5) {
+        mostra('Seu IMC indica que você está ABAIXO do peso.')
+    }
+    if (imcDoUsuario > 35) {
+        mostra('Seu IMC indica que você está ACIMA do peso.')
+    }
+    if (imcDoUsuario >= 18.5 && imcDoUsuario <= 35) {
+            mostra('OK! Seu IMC está entre os dois limites.')
+    }
+
+    mostra('<br>')
+
+    var peso = 75
+    var altura = 1.72
+    imc = calcularIMC(altura, peso)
+
+    mostra("Meu IMC é " + imc.toFixed(2))
+    mostra('ainda estou ' + (imc- 18.5).toFixed(2) + ' pontos acima do limite da magreza.')
+    mostra('Eu ainda estou ' + (35 - imc).toFixed(2) + ' pontos de ser classificado com a obesidade severa.')
+
+    mostra('<br>')
+
+    var pesoDoPrimo = 83
+    var alturaDoPrimo = 1.76
+    imcDoPrimo = calcularIMC(alturaDoPrimo, pesoDoPrimo)
+    mostra('O IMC do meu primo é ' + imcDoPrimo.toFixed(2))
+    mostra('Ele ainda está ' + (imcDoPrimo - 18.5).toFixed(2) + ' pontos acima do limite da magreza.')
+    mostra('Meu primo ainda esta ' + (35 - imcDoPrimo).toFixed(2)+ ' pontos abaixo de ser considerado um obeso severo.' )
+
+</script>

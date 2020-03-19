@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function mostra(frase) {
+        document.write(frase)
+    }
+
+    function pulaLinha() {
+        document.write('<br>')
+    }
+
+    /* var tamanho = parseInt(prompt('De que tamanho vai ser o quadrado?'))
+
+    for (let linha = 0; linha < tamanho; linha++) {
+        for (let coluna = 0; coluna < tamanho; coluna++) {
+            mostra('*')
+
+        }
+        mostra('<br>')
+    } */
+
+    /* var tamanho = parseInt(prompt('De que tamanho vai ser a escada ?'));
+    var controle = 1;
+
+    for (let linha = 0; linha < tamanho; linha++) {
+        for (let coluna = 0; coluna < controle; coluna++) {
+            mostra('*')
+        }
+        mostra('<br>')
+        controle++;
+    } */
+
+    var qtdLin = 10;
+    var qtdCol = 20;
+
+    for (var linha = 1; linha <= qtdLin; linha++) {
+        for (var coluna = 1; coluna < qtdCol; coluna++) {
+            if ((coluna == linha) || (coluna == qtdCol - linha)) {
+                mostra('*')
+            } else {
+                mostra('_')
+            }
+        }
+        pulaLinha();
+    }
+
+
+</script>

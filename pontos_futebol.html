@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+
+
+<script>
+
+    function pulaLinha (){
+        document.write('<br>')
+    }
+
+    function mostra (frase){
+        document.write(frase)
+        pulaLinha()
+    }
+
+    function calculaPontos(vitorias, empates, derotas){
+        return ((vitorias * 3) + empates ) - derotas
+    }
+
+    var vitorias = parseInt(
+        prompt('Quantos jogos o CDC FC venceu?'))
+    var empates = parseInt(
+        prompt('Quantos jogos o CDC FC empatou?'))
+    var derotas = parseInt(
+        prompt('Quantos jogos o CDC FC perder?'))    
+    var pontos = calculaPontos(vitorias, empates, derotas)
+
+    var vitoriasADV = parseInt(
+        prompt('Quantas vitorias o time inimigo possui?'))
+    var empatesADV = parseInt(
+        prompt('Quantos empates o time inimigo possui?'))
+    var derotasADV = parseInt(
+        prompt('Quantos derotas o time inimigo possui?'))
+    var pontos_adversario = calculaPontos(vitoriasADV, empatesADV, derotasADV)
+
+    mostra('Nosso time tem ' + pontos + ' pontos')
+    mostra('Time inimigo tem ' + pontos + ' pontos')
+
+    if(pontos > pontos_adversario ) {
+        mostra('Nosso time está indo MELHOR que o Livro Velhos!')
+    }
+    if (pontos < pontos_adversario) {
+        mostra('Nosso tiem está indo PIOR que o Livro Velhos!')
+    }
+
+    if (pontos == pontos_adversario) {
+        mostra('Nosso time está EMPATADO com o Lviro Velhos!')
+    }
+
+    console.log('pontos > ' + pontos)
+    console.log('empates > ' + empates)
+    console.log('derotas > ' + derotas)
+    console.log('pontosADV > ' + pontos_adversario)
+    console.log('empatesADV > ' + empatesADV)
+    console.log('derotasADV > ' + derotasADV)
+</script>

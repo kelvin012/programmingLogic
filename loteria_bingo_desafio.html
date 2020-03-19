@@ -1,0 +1,58 @@
+<meta charset="UTF-8">
+
+<!-- <input type="text" id="numero">
+<input type="button" id="verificar" value="Adicione e verifique no Bingo!"> -->
+
+<script>
+    var sorteados = []
+    var chutes = []
+    var qtdAcertos = 0;
+    //var numeroAleatorio = Math.round(Math.random() * 60)
+    //console.log(numeroAleatorio)
+
+    for (let i = 0; i < 6; i++) {
+        var numeroAleatorio = Math.round(Math.random() * 60)
+        sorteados.push(numeroAleatorio)
+    }
+
+    console.log(sorteados)
+
+    for (let j = 0; j < 6; j++) {
+        var aposta = parseInt(prompt('Qual o seu ' + (j + 1) + 'º chute ?'))
+        chutes.push(aposta)
+    }
+
+    for (let k = 0; k < sorteados.length; k++) {
+        for (let m = 0; m < chutes.length; m++) {
+            if (sorteados[k] == chutes[m]) {
+                console.log('acertou o ' + (k + 1) + 'º numero')
+                qtdAcertos++
+            }
+        }
+    }
+
+    if (qtdAcertos == 1) {
+        console.log('|======================|')
+        console.log('| Você acertou ' + qtdAcertos + ' numero|')
+        console.log('|======================|')
+    } else {
+        console.log('|=======================|')
+        console.log('| Você acertou ' + qtdAcertos + ' numeros|')
+        console.log('|=======================|')
+    }
+
+    /*  function adicionarSorteado() {
+        var numero = document.getElementById('numero').value
+        for (var i = 0; i < sorteados.length; i++) {
+            if (sorteados[i] == numero) {
+                alert('Número já sorteado!')
+                return
+            }
+        }
+        sorteados.push(numero)
+        console.log(sorteados)
+    }
+    var botao = document.getElementById('verificar')
+    botao.onclick = adicionarSorteado*/
+
+</script>
