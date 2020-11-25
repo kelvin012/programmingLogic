@@ -7,40 +7,50 @@
     var sorteados = []
     var chutes = []
     var qtdAcertos = 0;
-    //var numeroAleatorio = Math.round(Math.random() * 60)
-    //console.log(numeroAleatorio)
+    var cancelar = false
 
-    for (let i = 0; i < 6; i++) {
+    i = 0
+    while (i<6){
         var numeroAleatorio = Math.round(Math.random() * 60)
-        sorteados.push(numeroAleatorio)
+        var verificacao = sorteados.includes(numeroAleatorio)
+        if (!(verificacao)){
+            sorteados.push(numeroAleatorio)
+            i++;
+        }
     }
 
+    // ========/ DEBUG /==========//
     console.log(sorteados)
+    // ========/ DEBUG /==========//
 
     for (let j = 0; j < 6; j++) {
         var aposta = parseInt(prompt('Qual o seu ' + (j + 1) + 'º chute ?'))
         chutes.push(aposta)
+        if(isNaN(aposta)){
+            cancelar = true;
+            break;
+        }
     }
 
     for (let k = 0; k < sorteados.length; k++) {
         for (let m = 0; m < chutes.length; m++) {
             if (sorteados[k] == chutes[m]) {
-                console.log('acertou o ' + (k + 1) + 'º numero')
+                console.log('Você acertou o ' + (k + 1) + 'º numero')
                 qtdAcertos++
             }
         }
     }
 
-    if (qtdAcertos == 1) {
-        console.log('|======================|')
-        console.log('| Você acertou ' + qtdAcertos + ' numero|')
-        console.log('|======================|')
+    if (cancelar != true) {
+        console.log('+==================================+')
+        console.log('| Você acertou ' + qtdAcertos + ' numero(s) ao total|')
+        console.log('+==================================+')
     } else {
-        console.log('|=======================|')
-        console.log('| Você acertou ' + qtdAcertos + ' numeros|')
-        console.log('|=======================|')
+        console.log('+=======================+')
+        console.log('| Cancelar |')
+        console.log('+=======================+')
     }
-
+    
     /*  function adicionarSorteado() {
         var numero = document.getElementById('numero').value
         for (var i = 0; i < sorteados.length; i++) {
